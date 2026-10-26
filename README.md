@@ -1,71 +1,48 @@
 # RentEase — Furniture & Appliance Rental Platform
 
-A responsive rental storefront with a Node.js + Express API and SQLite database. Built to match the supplied Unified Mentor project requirements.
+RentEase is a college-project web app built with HTML, CSS, JavaScript, Node.js, Express and SQLite.
 
-## Features
-
-- Responsive storefront, search and Furniture / Appliances filters
-- Product cards, rental pricing, security deposits and 1 / 3 / 6 / 12-month plans
-- Customer registration, login and session-based authentication
-- Rental request with delivery date and address
-- Customer rental history and support request form
-- Admin dashboard: summary metrics, inventory updates, add/hide products, rental status management, support status management
-- SQLite persistence and seeded sample products
-- Basic validation and password hashing
-
-## Requirements
-
-- Node.js 20+ recommended
-- npm
+## Included
+- Responsive storefront with Furniture/Appliances filters and search.
+- Sample catalog with monthly rent, security deposit, tenure options and stock.
+- Customer registration/login, rental requests, rental history and support requests.
+- Admin dashboard for product inventory, rental statuses, support statuses and basic metrics.
+- SQLite persistence, sample data and `/healthz` health endpoint.
+- `render.yaml` plus deployment guide for an online demo.
+- Requirement audit: `docs/PROJECT_REQUIREMENTS.md`.
 
 ## Run locally
+Requires Node.js 20+.
 
-1. Extract the ZIP.
-2. Open a terminal in the `rentease` project folder.
-3. Install packages:
+```bash
+npm install
+npm start
+```
+Open `http://localhost:3000`. On Windows, if PowerShell blocks `npm.ps1`, use `npm.cmd install` and `npm.cmd start`, or double-click `RUN_RENTEASE.bat`.
 
-   ```bash
-   npm install
-   ```
-
-4. (Recommended) Copy `.env.example` to `.env` and change the admin password and session secret. Environment variables are read by Node only if your hosting platform injects them; for local `.env` support install `dotenv` and add `require('dotenv').config()` at the very top of `src/server.js`, or set them in your terminal.
-5. Start the app:
-
-   ```bash
-   npm start
-   ```
-
-6. Open http://localhost:3000
-
-## Admin login
-
-Default local demo credentials:
-
+Local demo admin credentials (change before use):
 - Email: `admin@rentease.local`
 - Password: `ChangeMe123!`
 
-Change these before deployment. The admin account is created the first time the server starts, using `ADMIN_EMAIL` and `ADMIN_PASSWORD` if present.
+## Environment variables
+- `PORT`: hosting port (usually injected by host)
+- `DB_PATH`: optional SQLite file path; use a persistent disk path on a host
+- `ADMIN_EMAIL`: admin email created at first startup if it does not exist
+- `ADMIN_PASSWORD`: admin password used only when creating that account
+- `SESSION_SECRET`: session signing secret; required in production (minimum 32 characters)
+- `NODE_ENV=production`: enables production cookie settings and production configuration checks
 
-## Main folders
+Do not use the demo credentials or default local secret on a public deployment.
 
-- `public/index.html` — page structure
-- `public/styles.css` — responsive visual styling
-- `public/app.js` — browser interactions
-- `src/server.js` — Express routes, validation, authentication, SQLite schema and seed data
-- `data/rentease.db` — generated database file, created on first run
+## Deploy online
+See [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md). The included Render Blueprint uses a persistent disk, which generally requires a paid plan. Hosting account login, billing approval and final deployment must be completed by the project owner. A successful local run does not itself create a public URL.
+
+## Known limitations
+- Checkout submits a rental request only; there is no real payment gateway or multi-item cart.
+- Delivery/pickup are not integrated with logistics partners; no pickup date or calendar view exists.
+- No customer-side return/extension workflow, dispute/damage claims or service-area management.
+- The default Express in-memory session store is suitable only for a small demo. Add a persistent session store, rate limiting, CSRF protection, backups, privacy/terms pages and a security review before accepting real customer data.
+- Product images use external Unsplash URLs; replace them with images you have permission to use for a public commercial deployment.
 
 ## API overview
-
-- `POST /api/register`, `POST /api/login`, `POST /api/logout`, `GET /api/me`
-- `GET /api/products`, `GET /api/products/:id`
-- `POST /api/rentals`, `GET /api/rentals`
-- `POST /api/support`
-- Admin: `GET /api/admin/summary`, `/api/admin/products`, `/api/admin/users`, `GET /api/support`, and PATCH/POST routes under `/api/admin/*`
-
-## Important demo limitations
-
-- Checkout submits a rental request only; no real payment gateway is connected.
-- Delivery and pickup are represented by requested dates and admin-managed statuses; there is no logistics partner integration.
-- Product images use external Unsplash URLs; replace them with licensed product images you control for a real deployment.
-- The default Express in-memory session store is suitable only for local/demo use. Use a persistent session store and HTTPS in production.
-- Add rate limiting, CSRF protection, production secret management, backups, privacy/terms pages and full security review before accepting real customer data.
+`/api/register`, `/api/login`, `/api/logout`, `/api/me`, `/api/products`, `/api/rentals`, `/api/support`, `/api/admin/summary`, `/api/admin/products`, `/api/admin/users`, `/api/admin/rentals/:id`, `/api/support/:id`.
