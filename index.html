@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Rent furniture and appliances with flexible monthly plans from RentEase.">
+<title>RentEase — Make room for living</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="announcement">A better way to settle in <span>·</span> Flexible monthly rentals, delivered to your door</div>
+<header class="site-header">
+<a class="brand" href="#"><span class="brand-mark">r</span><span>rent<span class="brand-light">ease</span><small>LIVE LIGHT. LIVE FLEXIBLE.</small></span></a>
+<nav><a href="#catalog">Explore</a><a href="#how">How it works</a><a href="#benefits">Why RentEase</a></nav>
+<div class="header-actions"><button class="text-button" id="accountBtn">Sign in</button><button class="btn btn-dark" id="rentalsBtn">My rentals <span>↗</span></button><button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button></div>
+</header>
+<main>
+<section class="hero">
+<div class="hero-copy"><div class="eyebrow"><span class="eyebrow-dot"></span> YOUR SPACE, YOUR WAY</div><h1>Make room<br>for <em>living.</em></h1><p class="hero-description">Good furniture. Great appliances. None of the commitment. Rent what you need, for as long as you need it.</p><div class="hero-actions"><a class="btn btn-green" href="#catalog">Explore the collection <span>↗</span></a><a class="underlined" href="#how">How renting works <span>→</span></a></div><div class="trust-row"><div class="avatar-stack"><span>J</span><span>A</span><span>M</span><span>+</span></div><div><strong>Made for life's in-between</strong><small>Moving in, moving up, moving on.</small></div></div></div>
+<div class="hero-visual"><div class="hero-image"></div><div class="floating-note note-top"><span class="note-icon">✳</span><span><b>Room to change</b><small>Plans that fit your life</small></span></div><div class="floating-price"><small>THE LITTLE THINGS ADD UP</small><b>From ₹299<span>/month</span></b><div class="price-line"><span></span></div><small>Keep your budget breathing.</small></div><div class="image-caption">A home that feels like you. <span>01 / 04</span></div></div>
+<div class="hero-stamp"><span>LIVE</span><span>LIGHT</span><span>✳</span></div>
+</section>
+<section class="value-strip"><div><span class="value-icon">↗</span><span><b>Flexible plans</b><small>1, 3, 6 or 12 months</small></span></div><div><span class="value-icon">⌂</span><span><b>Delivered to you</b><small>Pick a date that works</small></span></div><div><span class="value-icon">♡</span><span><b>Support when needed</b><small>We're here to help</small></span></div><div><span class="value-icon">↻</span><span><b>Keep life moving</b><small>Extend or return with ease</small></span></div></section>
+<section class="catalog section" id="catalog"><div class="section-top"><div><div class="eyebrow">THE RENTAL EDIT</div><h2>Find your <em>feel-good.</em></h2><p class="section-desc">Thoughtful essentials for every kind of space.</p></div><a class="underlined desktop-link" href="#catalog">Explore all essentials <span>→</span></a></div>
+<div class="catalog-tools"><div class="filter-tabs" role="group" aria-label="Filter products"><button class="filter active" data-category="All">Everything <span id="allCount"></span></button><button class="filter" data-category="Furniture">Furniture</button><button class="filter" data-category="Appliances">Appliances</button></div><label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Find your next essential…" aria-label="Search products"></label></div>
+<div id="productGrid" class="product-grid"><div class="loading">Finding your essentials…</div></div>
+<div class="center-action"><button class="btn btn-outline" id="showAllBtn">Explore the collection <span>↓</span></button></div>
+</section>
+<section class="manifesto" id="benefits"><div class="manifesto-art"><div class="art-circle"></div><div class="manifesto-label">A LITTLE MORE ROOM<br>FOR WHAT MATTERS</div><span class="art-spark">✳</span></div><div class="manifesto-copy"><div class="eyebrow">LESS STUFF. MORE LIFE.</div><h2>Your home should<br>fit your life. <em>Not<br>the other way around.</em></h2><p>New city? First apartment? A chapter that's still unfolding? RentEase helps you make a place your own without buying everything in sight.</p><a href="#how" class="underlined">A simpler way to settle in <span>→</span></a><div class="manifesto-stat"><b>One good choice</b><span>Can make a whole room feel different.</span></div></div></section>
+<section class="how section" id="how"><div class="section-top"><div><div class="eyebrow">SIMPLE AS IT SHOULD BE</div><h2>Three steps to <em>settled.</em></h2></div><p class="section-desc">From browsing to belonging, we keep things easy.</p></div><div class="steps"><article><span class="step-number">01</span><div class="step-icon">⌕</div><h3>Pick your pieces</h3><p>Browse the collection and find what your space is missing.</p></article><article><span class="step-number">02</span><div class="step-icon">▦</div><h3>Choose your plan</h3><p>Select your rental duration, delivery date and location.</p></article><article><span class="step-number">03</span><div class="step-icon">⌂</div><h3>Make yourself home</h3><p>Enjoy your essentials. Extend your plan or arrange a return when life changes.</p></article></div></section>
+<section class="cta"><div><div class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</div><h2>A little less owning.<br><em>A lot more living.</em></h2></div><a href="#catalog" class="btn btn-cream">Find your essentials <span>↗</span></a><span class="cta-decoration">✳</span></section>
+</main>
+<footer><a class="brand footer-brand" href="#"><span class="brand-mark">r</span><span>rent<span class="brand-light">ease</span><small>LIVE LIGHT. LIVE FLEXIBLE.</small></span></a><p>Make space for what matters.</p><div><a href="#catalog">Explore</a><a href="#how">How it works</a><button id="supportBtn">Help & support</button><span>© <span id="year"></span> RentEase</span></div></footer>
+<div class="toast" id="toast" role="status"></div>
+<div class="modal-backdrop" id="modalBackdrop" hidden><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="modalClose" aria-label="Close">×</button><div id="modalContent"></div></section></div>
+<script src="/app.js"></script>
+</body></html>

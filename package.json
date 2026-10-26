@@ -1,0 +1,8 @@
+{
+  "name": "rentease-rental-platform",
+  "version": "1.0.0",
+  "description": "RentEase furniture and appliance rental platform",
+  "main": "src/server.js",
+  "scripts": {"start":"node src/server.js","dev":"node --watch src/server.js"},
+  "dependencies": {"bcryptjs":"^2.4.3","better-sqlite3":"^11.8.1","express":"^4.21.2","express-session":"^1.18.1"}
+}
